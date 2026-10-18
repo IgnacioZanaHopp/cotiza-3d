@@ -33,7 +33,7 @@ artefactos. No se afirma que se hayan ejecutado aquí.
 
 ## Instalación y uso
 
-Requiere Node **22.12+** (se recomienda 24) y npm.
+Requiere Node **22.22.2+ o 24.15+**, en sus ramas LTS, y npm. CI usa Node 24.
 
 ```sh
 npm ci

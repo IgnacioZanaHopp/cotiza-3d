@@ -6,7 +6,7 @@
   "description": "Cotizaciones de impresión 3D con costos transparentes en CLP.",
   "license": "MIT",
   "engines": {
-    "node": ">=22.12"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
