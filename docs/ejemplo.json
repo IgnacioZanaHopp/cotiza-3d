@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "name": "Soporte de escritorio",
+  "createdAt": "2026-10-18T21:58:09.566Z",
+  "currency": "CLP",
+  "input": {
+    "grams": 120,
+    "filamentPerKg": 22000,
+    "watts": 150,
+    "hours": 6,
+    "electricityPerKwh": 220,
+    "wearPerHour": 300,
+    "failurePercent": 10,
+    "laborMinutes": 25,
+    "laborPerHour": 6000,
+    "marginPercent": 30
+  },
+  "quote": {
+    "filament": 2640,
+    "electricity": 197.99999999999997,
+    "wear": 1800,
+    "failureAllowance": 515.333333333333,
+    "labor": 2500,
+    "cost": 7653.333333333333,
+    "price": 10934,
+    "profit": 3280.666666666667
+  },
+  "assumptions": {
+    "failures": "Material, electricidad y desgaste se repiten hasta obtener una pieza exitosa. Mano de obra una vez.",
+    "margin": "Margen sobre precio de venta; precio = costo / (1 - margen).",
+    "rounding": "Precio final redondeado hacia arriba al peso. Costos internos sin redondear.",
+    "taxes": "No incluye impuestos ni envío."
+  }
+}
