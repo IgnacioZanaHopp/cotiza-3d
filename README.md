@@ -26,10 +26,10 @@ El ejemplo predeterminado produce el siguiente desglose, verificado por pruebas:
 | **Precio con 30% de margen** | **$10.934** |
 
 [Ver la exportación JSON generada por el motor real](docs/ejemplo.json).
-No se adjunta una captura: el sandbox impidió iniciar Chromium y el navegador
-conectado denegó abrir localhost. Los tests Playwright generan capturas reales
-cuando se ejecutan en un entorno con navegador autorizado; CI las guarda como
-artefactos. No se afirma que se hayan ejecutado aquí.
+No se adjunta una captura: en la verificación del 2026-10-25, el sandbox de
+macOS impidió iniciar Chromium (`Permission denied 1100`). Los tests Playwright
+generan capturas reales cuando el entorno permite iniciar el navegador; CI las
+guarda como artefactos.
 
 ## Instalación y uso
 
@@ -106,8 +106,10 @@ npm run test:e2e
 ```
 
 Se ejecutaron **27 pruebas Vitest**, ESLint, comprobación estricta de tipos y
-build de producción. Los 6 casos Playwright (3 flujos × escritorio/móvil)
-están preparados para CI y pendientes de su primera ejecución autorizada.
+build de producción. Se intentaron los 6 casos Playwright (3 flujos ×
+escritorio/móvil) el 2026-10-25: todos quedaron bloqueados al iniciar Chromium,
+antes de ejecutar sus comprobaciones. Playwright usa un único worker tanto
+localmente como en CI para limitar el consumo de memoria.
 Las capturas quedan en `test-results/`, ignorado por Git. Las reglas axe ayudan a
 detectar problemas; no sustituyen una revisión manual con tecnologías de apoyo.
 
@@ -133,7 +135,8 @@ Los badges mostrarán resultados reales cuando existan ejecuciones en GitHub.
 
 Se desarrolló con asistencia de IA (Codex). El autor es responsable del diseño,
 la revisión y las pruebas; los controles automatizados se ejecutaron durante el
-desarrollo. La verificación visual y Playwright requieren un entorno autorizado.
+desarrollo. La verificación visual y Playwright requieren un entorno que permita
+iniciar Chromium.
 
 ## English summary
 
