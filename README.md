@@ -26,7 +26,7 @@ El ejemplo predeterminado produce el siguiente desglose, verificado por pruebas:
 | **Precio con 30% de margen** | **$10.934** |
 
 [Ver la exportación JSON generada por el motor real](docs/ejemplo.json).
-No se adjunta una captura: en la verificación del 2026-10-25, el sandbox de
+No se adjunta una captura: en la verificación del 2026-10-26, el sandbox de
 macOS impidió iniciar Chromium (`Permission denied 1100`). Los tests Playwright
 generan capturas reales cuando el entorno permite iniciar el navegador; CI las
 guarda como artefactos.
@@ -106,9 +106,11 @@ npm run test:e2e
 ```
 
 Se ejecutaron **27 pruebas Vitest**, ESLint, comprobación estricta de tipos y
-build de producción. Se intentaron los 6 casos Playwright (3 flujos ×
-escritorio/móvil) el 2026-10-25: todos quedaron bloqueados al iniciar Chromium,
-antes de ejecutar sus comprobaciones. Playwright usa un único worker tanto
+build de producción. La última verificación, el 2026-10-26, ejecutó
+`npm run test:e2e -- --max-failures=1`: Chromium quedó bloqueado al iniciarse,
+antes de ejecutar las comprobaciones del primer caso; los otros cinco no se
+ejecutaron. La suite contiene 6 casos (3 flujos × escritorio/móvil).
+Playwright usa un único worker tanto
 localmente como en CI para limitar el consumo de memoria.
 Las capturas quedan en `test-results/`, ignorado por Git. Las reglas axe ayudan a
 detectar problemas; no sustituyen una revisión manual con tecnologías de apoyo.
